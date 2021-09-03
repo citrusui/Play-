@@ -659,7 +659,7 @@ void CGSH_Vulkan::SetRenderingContext(uint64 primReg)
 			break;
 		}
 
-		pipelineCaps.textureUseLinearFiltering = (minLinear && magLinear);
+		pipelineCaps.textureUseLinearFiltering = (minLinear || magLinear);
 	}
 
 	if(prim.nAlpha)
