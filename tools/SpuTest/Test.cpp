@@ -22,7 +22,7 @@ CTest::~CTest()
 
 void CTest::RunSpu(unsigned int ticks)
 {
-	static const unsigned int DST_SAMPLE_RATE = 44100;
+	static const unsigned int DST_SAMPLE_RATE = 48000;
 	unsigned int blockSize = ticks * 2;
 	std::vector<int16> samples(blockSize);
 	m_spuCore0.Render(samples.data(), blockSize, DST_SAMPLE_RATE);
