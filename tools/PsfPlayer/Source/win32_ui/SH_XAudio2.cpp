@@ -2,7 +2,7 @@
 #include <assert.h>
 #include "SH_XAudio2.h"
 
-#define SAMPLE_RATE 44100
+#define SAMPLE_RATE 48000
 
 CSH_XAudio2::CSH_XAudio2()
     : m_masteringVoice(nullptr)
