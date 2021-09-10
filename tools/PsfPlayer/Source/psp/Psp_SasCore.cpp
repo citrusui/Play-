@@ -246,8 +246,8 @@ uint32 CSasCore::Core(uint32 contextAddr, uint32 bufferAddr)
 	int16* samplesSpu0 = reinterpret_cast<int16*>(m_ram + bufferAddr);
 	int16* samplesSpu1 = reinterpret_cast<int16*>(alloca(sampleCount * sizeof(int16)));
 
-	m_spu[0]->Render(samplesSpu0, sampleCount, 44100);
-	m_spu[1]->Render(samplesSpu1, sampleCount, 44100);
+	m_spu[0]->Render(samplesSpu0, sampleCount, 48000);
+	m_spu[1]->Render(samplesSpu1, sampleCount, 48000);
 
 	for(unsigned int i = 0; i < sampleCount; i++)
 	{
