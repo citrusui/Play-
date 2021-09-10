@@ -86,12 +86,12 @@ void CPsfSubSystem::Update(bool singleStep, CSoundHandler* soundHandler)
 			unsigned int blockOffset = (BLOCK_SIZE * m_currentBlock);
 			int16* samplesSpu0 = m_samples + blockOffset;
 
-			m_iop.m_spuCore0.Render(samplesSpu0, BLOCK_SIZE, 44100);
+			m_iop.m_spuCore0.Render(samplesSpu0, BLOCK_SIZE, 48000);
 
 			if(m_iop.m_spuCore1.IsEnabled())
 			{
 				int16 samplesSpu1[BLOCK_SIZE];
-				m_iop.m_spuCore1.Render(samplesSpu1, BLOCK_SIZE, 44100);
+				m_iop.m_spuCore1.Render(samplesSpu1, BLOCK_SIZE, 48000);
 
 				for(unsigned int i = 0; i < BLOCK_SIZE; i++)
 				{
@@ -107,7 +107,7 @@ void CPsfSubSystem::Update(bool singleStep, CSoundHandler* soundHandler)
 			{
 				if(soundHandler)
 				{
-					soundHandler->Write(m_samples, BLOCK_SIZE * BLOCK_COUNT, 44100);
+					soundHandler->Write(m_samples, BLOCK_SIZE * BLOCK_COUNT, 48000);
 				}
 				m_currentBlock = 0;
 			}
