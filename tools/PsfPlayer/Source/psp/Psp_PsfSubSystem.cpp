@@ -4,7 +4,7 @@
 
 using namespace Psp;
 
-#define SAMPLES_PER_FRAME (44100 / 60)
+#define SAMPLES_PER_FRAME (48000 / 60)
 
 CPsfSubSystem::CPsfSubSystem(uint32 ramSize)
     : m_ram(new uint8[ramSize])
@@ -118,7 +118,7 @@ void CPsfSubSystem::Update(bool singleStep, CSoundHandler* soundHandler)
 
 			if(soundHandler)
 			{
-				soundHandler->Write(buffer, bufferSamples, 44100);
+				soundHandler->Write(buffer, bufferSamples, 48000);
 			}
 
 			m_samplesToFrame -= (bufferSamples / 2);
