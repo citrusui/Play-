@@ -9,7 +9,7 @@
 
 using namespace Iop;
 
-#define INIT_SAMPLE_RATE (44100)
+#define INIT_SAMPLE_RATE (48000)
 #define TIME_SCALE (0x1000)
 #define LOG_NAME ("iop_spubase")
 
@@ -184,7 +184,7 @@ void CSpuBase::Reset()
 	m_reverbCurrAddr = 0;
 	m_reverbWorkAddrStart = 0;
 	m_reverbWorkAddrEnd = 0x80000;
-	m_baseSamplingRate = 44100;
+	m_baseSamplingRate = 48000;
 
 	memset(m_channel, 0, sizeof(m_channel));
 	memset(m_reverb, 0, sizeof(m_reverb));
@@ -641,7 +641,7 @@ void CSpuBase::Render(int16* samples, unsigned int sampleCount, unsigned int sam
 	bool checkIrqs = (m_ctrl & CONTROL_IRQ) && (m_irqAddr != INVALID_ADDRESS);
 
 	assert((sampleCount & 0x01) == 0);
-	//ticks are 44100Hz ticks
+	//ticks are 48000Hz ticks
 	unsigned int ticks = sampleCount / 2;
 	memset(samples, 0, sizeof(int16) * sampleCount);
 
