@@ -3,7 +3,7 @@
 #include <assert.h>
 
 //#define LOGGING
-#define SAMPLE_RATE 44100
+#define SAMPLE_RATE 48000
 
 ALCint g_attrList[] =
     {
