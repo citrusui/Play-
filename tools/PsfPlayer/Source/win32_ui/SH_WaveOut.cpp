@@ -2,8 +2,8 @@
 #include <assert.h>
 #include "SH_WaveOut.h"
 
-#define SAMPLE_RATE 44100
-//#define SAMPLES_PER_UPDATE	(44 * 2)
+#define SAMPLE_RATE 48000
+//#define SAMPLES_PER_UPDATE	(48 * 2)
 
 CSH_WaveOut::CSH_WaveOut()
     : m_waveOut(NULL)
